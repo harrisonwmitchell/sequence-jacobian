@@ -72,7 +72,7 @@ class StageBlock(Block):
     def __repr__(self):
         return f"<StageBlock '{self.name}' with stages {[k.name for k in self.stages]}>"
 
-    def _steady_state(self, calibration, backward_tol=1E-9, backward_maxit=5000,
+    def _steady_state(self, calibration, backward_tol=1E-9, backward_maxit=100000,
                       forward_tol=1E-10, forward_maxit=100_000):
         ss = self.extract_ss_dict(calibration)
         hetinputs = self.return_hetinputs(ss)
